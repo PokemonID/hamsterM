@@ -1,0 +1,98 @@
+.global{
+    width: 100%;
+    height: 100%;
+}
+
+.ma-in {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.welcome-text-shop {
+    margin-top: 20px;
+    margin-right: -5%;
+    text-shadow: 2px 2px 4px rgba(165, 164, 164, 0.7);
+    justify-content: center;
+    font-family: 'Lobster', sans-serif;
+}
+
+.quit-text-shop {
+    margin-top: 15px;
+    margin-right: 75%;
+    font-size: 22px;
+    font-family: 'Lobster', sans-serif;
+    position: absolute;
+}
+
+.welcome {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.img {
+    height: 100px;
+}
+
+.list {
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    height: 180px;
+    width: 100%;
+}
+
+.product-container {
+    flex-direction: row;
+    margin-left: 20px;
+    width: 100px;
+}
+
+.price-button {
+    background-color: rgb(108, 122, 252);
+    color: rgb(235, 227, 227);
+    width: 100px;
+    border-radius: 8px;
+    border: 2px solid #6e6e6e;
+    text-shadow: 2px 2px 4px rgba(165, 164, 164, 0.7);
+    font-family: 'Lobster', sans-serif;
+}
+
+.item {
+    margin-right: 40px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 150px;
+}
+
+.item-pay {
+    margin-right: 40px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 120px;
+    margin-top: 40px;
+    
+}
+
+.title {
+    margin-left: 5px;
+}
+
+.title-item {
+    text-shadow: 2px 2px 4px rgba(165, 164, 164, 0.7);
+    font-family: 'Lobster', sans-serif;
+}
+
+.main-shop {
+    max-width: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.price {
+    margin-top: 5px;
+}
