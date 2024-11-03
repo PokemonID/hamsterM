@@ -25,6 +25,10 @@
     position: absolute;
 }
 
+.item-image {
+    max-height: 100px;
+}
+
 .welcome {
     display: flex;
     flex-wrap: wrap;
@@ -51,7 +55,7 @@
 }
 
 .price-button {
-    background-color: rgb(108, 122, 252);
+    background-color: rgb(99, 102, 241);
     color: rgb(235, 227, 227);
     width: 100px;
     border-radius: 8px;

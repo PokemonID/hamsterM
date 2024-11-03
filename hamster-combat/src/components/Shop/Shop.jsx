@@ -1,11 +1,11 @@
 import React from 'react';
 import './Shop.css';
-import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
+import { useNavigate } from 'react-router-dom';
 import { HeadsItems, GlassesItems, AccessoriesItems, PaymentItems } from "./data";
 import ProductItem from '../Productitem/Productitem';
 
 const Shop = () => {
-  const navigate = useNavigate(); // Инициализируем navigate
+  const navigate = useNavigate();
 
   return (
     <div className='bg-black flex justify-center'>
