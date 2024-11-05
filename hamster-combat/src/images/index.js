@@ -9,8 +9,8 @@ import hamsterCoin from "./hamstercoin.png";
 import giftMini from "./giftmini.png";
 import giftMax from "./giftmax.png";
 import diamond from "./diamond.png";
-import chipB from "./chipblue.png";
 import chipY from "./chipyellow.png";
+import withdraw from "./withdraw.png";
 
 export {
     hamsterExchange,
@@ -24,6 +24,6 @@ export {
     giftMini,
     giftMax,
     diamond,
-    chipB,
-    chipY
+    chipY,
+    withdraw
 };

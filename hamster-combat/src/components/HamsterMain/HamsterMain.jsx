@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './HamsterMain.css';
 import '../../index.css'
 import Hamster from '../../icons/Hamster';
@@ -10,6 +10,7 @@ import Friends from '../../icons/Friends';
 import Coins from '../../icons/Coins';
 import {  BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import { TonConnectButton } from '@tonconnect/ui-react';
+import { CustomContext } from '../../utils/Context';
 
 const HamsterMain = () => {
   const levelNames = [
@@ -39,9 +40,9 @@ const HamsterMain = () => {
   ];
 
   const [levelIndex, setLevelIndex] = useState(6);
-  const [points, setPoints] = useState(0);
+  const { points, setPoints } = useContext(CustomContext);
   const [clicks, setClicks] = useState([]);
-  const pointsToAdd = 111;
+  const pointsToAdd = 11111;
   const profitPerHour = 126420;
   const navigate = useNavigate();
 

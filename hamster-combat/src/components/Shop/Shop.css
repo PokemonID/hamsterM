@@ -13,16 +13,19 @@
     margin-top: 20px;
     margin-right: -5%;
     text-shadow: 2px 2px 4px rgba(165, 164, 164, 0.7);
-    justify-content: center;
+    text-align: center;
     font-family: 'Lobster', sans-serif;
 }
 
 .quit-text-shop {
-    margin-top: 15px;
-    margin-right: 75%;
-    font-size: 22px;
-    font-family: 'Lobster', sans-serif;
-    position: absolute;
+    position: absolute;  
+    margin-left: 10%;
+    left: 0;
+    top: 70%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;   
+    cursor: pointer; 
 }
 
 .item-image {
@@ -31,8 +34,9 @@
 
 .welcome {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center;  
+  align-items: center;    
+  position: relative;  
     width: 100%;
 }
 
