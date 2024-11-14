@@ -82,6 +82,8 @@ const HamsterMain = () => {
     return () => clearInterval(interval);
   }, []);
 
+  
+
   const handleCardClick = (e) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -135,6 +137,52 @@ const HamsterMain = () => {
     return () => clearInterval(interval);
   }, [profitPerHour]);
 
+  useEffect(() => { 
+    console.log('useEffect triggered'); 
+    const urlParams = new URLSearchParams(window.location.search); 
+    const token = urlParams.get('token'); 
+    if (token) { 
+      // Отправляем токен на сервер для верификации 
+      fetch('http://localhost:3000/api/user-data', { 
+        method: 'GET', 
+        headers: { 
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${token}`, // передаем токен как заголовок 
+        }, 
+      }) 
+      .then(response => { 
+        console.log('Response status:', response.status); // Проверяем статус ответа 
+        return response.json(); 
+      }) 
+      .then(data => { 
+        if (data.userId) { 
+          // Если user_id присутствует, значит данные успешно получены 
+          console.log('User data:', data); 
+          // Можно сохранить данные пользователя, например, в localStorage 
+          localStorage.setItem('user', JSON.stringify(data)); // Сохраняем данные о пользователе 
+        } else { 
+          console.log('User not found, creating new user...'); 
+          fetch('http://localhost:3000/api/user-create', { 
+            method: 'POST', 
+            headers: { 
+              'Content-Type': 'application/json', 
+              'Authorization': `Bearer ${token}`, // передаем токен, если его есть 
+            }, 
+            body: JSON.stringify({ token }), // передаем токен или другие данные, если необходимо 
+          }) 
+          .then(response => response.json()) 
+          .then(createdUser => { 
+            console.log('New user created:', createdUser); 
+            // Сохраняем нового пользователя в localStorage 
+            localStorage.setItem('user', JSON.stringify(createdUser)); 
+          }) 
+          .catch(error => console.error('Ошибка создания пользователя:', error)); 
+        } 
+      }) 
+      .catch(error => console.error('Ошибка:', error)); 
+    } 
+  }, []);
+
   return (
     <div className="bg-black flex justify-center">
       <div className="w-full bg-black text-white h-screen font-bold flex flex-col max-w-xl">
@@ -179,7 +227,7 @@ const HamsterMain = () => {
           </div>
         </div>
 
-        <div className="flex-grow mt-4 bg-[#f3ba2f] rounded-t-[48px] relative top-glow z-0">
+        <div className="flex-grow mt-4 bg-[#1F51FF] rounded-t-[48px] relative top-glow z-0">
           <div className="absolute top-[2px] left-0 right-0 bottom-0 bg-[#1d2025] rounded-t-[46px]">
             <div className="px-4 mt-6 flex justify-between gap-2">
               <div className="bg-[#272a2f] rounded-lg px-4 py-2 w-full relative">
@@ -204,7 +252,7 @@ const HamsterMain = () => {
 
             <div className="px-4 mt-4 flex justify-center">
               <div className="px-4 py-2 flex items-center space-x-2">
-                <img src={dollarCoin} alt="Dollar Coin" className="w-10 h-10" />
+                <img src={hamsterCoin} alt="Dollar Coin" className="w-10 h-10" />
                 <p className="text-4xl text-white">{points.toLocaleString()}</p>
               </div>
             </div>
@@ -233,18 +281,19 @@ const HamsterMain = () => {
         <Mine className="w-8 h-8 mx-auto" />
           <p className="mt-1">Shop</p>
         </button>
+        <button className="text-center text-[#85827d] w-1/5">
+          <img src={hamsterCoin} alt="Airdrop" className="w-8 h-8 mx-auto" />
+          <p className="mt-1">Airdrop</p>
+        </button>
         <button className="text-center text-[#85827d] w-1/5" onClick={() => navigate('/friends')}>
         <Friends className="w-8 h-8 mx-auto" />
           <p className="mt-1">Friends</p>
         </button>
-        <button className="text-center text-[#99127d] w-1/5">
+        <button className="text-center text-[#85827d] w-1/5" onClick={() => navigate('/earn')}>
         <Coins className="w-8 h-8 mx-auto" />
           <p className="mt-1 ">Earn</p>
         </button>
-        <button className="text-center text-[#99127d] w-1/5">
-          <img src={hamsterCoin} alt="Airdrop" className="w-8 h-8 mx-auto" />
-          <p className="mt-1">Airdrop</p>
-        </button>
+        
       </div>
 
       {clicks.map((click) => (

@@ -11,6 +11,7 @@ const Friends = () => {
                 <div className="px-36 py-2 flex items-center space-x-1"> 
                     <h4 className="text-1xl text-white"> Вы и ваш друг получите бонусы</h4>
                 </div>
+                <div className='px-4'>
                 <div className="bg-[#272a2f] rounded-lg px-4 py-2 w-full relative flex items-center">
                 <img src={giftMini} alt="Gift" className="w-12 h-12 mr-4" />
                 <div>
@@ -21,6 +22,8 @@ const Friends = () => {
                 </div>
                 </div>
                 </div>
+                </div>
+                <div className='px-4'>
                 <div className="top-2 bg-[#272a2f] rounded-lg px-4 py-2 w-full relative flex items-center">
                 <img src={giftMax} alt="Gift" className="w-12 h-12 mr-4" />
                 <div>
@@ -31,10 +34,17 @@ const Friends = () => {
                 </div>
                 </div>
                 </div>
-                <div className=" py-5 flex items-center space-x-1"> 
+                </div>
+                <div className="px-4 py-5 flex items-center space-x-1"> 
                     <h2 className="text-2xl text-white"> Список ваших друзей</h2>
                 </div>
-
+                <div className="flex justify-center gap-3 mb-6 space-x-5">
+        <button className="ml-5 w-3/5 flex items-center bg-blue-600 text-white rounded-lg px-6 py-3 text-lg font-medium ">
+          Пригласить друга
+        </button>
+        <button className="mr-5 w-1/6 flex justify-center items-center bg-blue-600 text-white rounded-lg">
+        Copy</button>
+      </div>
         </div>
     </div>
      );

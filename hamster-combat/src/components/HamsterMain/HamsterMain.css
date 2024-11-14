@@ -3,7 +3,7 @@
   }
   
   .top-glow {
-    box-shadow: 0 -26px 20px rgba(243, 186, 47, 0.3);
+    box-shadow: 0 -10px 20px rgba(0, 128, 255, 0.6);
   }
   
   /* Define the keyframes for the blinking animation */

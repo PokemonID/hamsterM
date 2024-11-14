@@ -22,7 +22,7 @@ return (
       <div className="text-2xl flex py-2 items-center">{points}
       <img src={hamsterCoin} alt="Coin" className="w-6 h-6 ml-1" />
       </div>
-      <div className="text-lg py-3">~{points*0.1}Р</div>
+      <div className="text-lg py-3">~{(points * 0.1).toFixed(1)}Р</div>
     </div>
     <div className='py-3 bg-blue flex justify-between space-x-2'>
       <button type='button' className='w-1/2 bg-blue-600 rounded-lg' onClick={() => setModalActive(true)}>Вывести</button>
@@ -56,7 +56,7 @@ return (
           <h2 className="text-2xl font-bold mb-2">Вывод</h2>
           <div className="text-left mb-4 flex items-center space-x-2">
             <p className="text-gray-600">Доступно:</p>
-            <p className="text-xl font-bold">{points*0.1}₽</p>
+            <p className="text-xl font-bold">{(points * 0.1).toFixed(1)}Р</p>
           </div>
           <div className="mb-4">
             <label className="text-gray-600 mb-2 block">Способ</label>
